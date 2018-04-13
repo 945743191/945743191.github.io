@@ -128,6 +128,9 @@
 	<audio id="audio" autoplay='autoplay' loop='loop'>
 		<source src="mnk.mp3" type="audio/ogg">
 		<source src="mnk.mp3" type="audio/mpeg">
+		$('html').one('touchstart',function(){
+    		audio.play();
+		});
 	</audio>
  </body>
 </html>
