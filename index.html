@@ -127,10 +127,13 @@
 	</marquee>
 		<audio controls="controls" id="music" loop="loop">
 	    	<source src="mnk.mp3" type="audio/ogg" />
-		</audio>
-	    	Media = document.getElementById("music");
-		alert(Media.networkState);
-		Media.src = "./assets/sound/music.mp3"; 
-		Media.play();
+		audio.addEventListener("canplaythrough", function({
+	  	audio.play();
+	  	document.addEventListener('touchstart',function(){
+	    	audio.play();
+	    	
+	     	document.removeEventListener('touchstart',arguments.callee,false);}, false);
+
+	});
  </body>
 </html>
