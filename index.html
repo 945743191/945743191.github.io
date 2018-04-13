@@ -125,6 +125,16 @@
 	<img src="3.jpg" width="200px" height="360px" align="bottom">
 	<img src="4.jpg" width="200px" height="360px" align="left">
 	</marquee>
-	<embed src="mnk.mp3" hidden="true" autostart="true" loop="true">
+	<audio style="display:none; height: 0" id="bg-music" preload="auto" src="mnk.mp3" loop="true"></audio>
+	 document.addEventListener('DOMContentLoaded', function () {
+	    function audioAutoPlay() {
+		var audio = document.getElementById('bg-music');
+		    audio.play();
+		document.addEventListener("WeixinJSBridgeReady", function () {
+		    audio.play();
+		}, false);
+	    }
+	    audioAutoPlay();
+	});
  </body>
 </html>
