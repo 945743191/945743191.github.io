@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>你的生日礼物</title>
+ <style>
+  	body{
+		background:#000;
+	}
+	#heart{
+	position:relative;
+		width:100px;
+		height:160px;
+		margin:20px auto;
+		transform-style:preserve-3d;
+		animation:rot 10s linear infinite;	
+	}
+	@Keyframes rot{
+		from{transform:rotateY(0deg) rotateX(0deg);}
+		to{transform:rotateY(360deg) rotateX(360deg);}
+	}
+	#heart div.heart{
+		position:absolute;
+		left:0px;
+		top:0px;
+		width:120px;
+		height:180px;
+		border:2px solid red;
+		border-left:0;
+		border-bottom:0;
+		border-radius:50% 50% 0/50% 40% 0;  /*圆角属性*/
+		transform:rotate(45deg);
+	}
+	#cube{
+		position:relative;
+		width:50px;
+		height:50px;
+		transform-style:preserve-3d;
+		transform:translateX(25px) translateY(54px) translateZ(25px);	
+	}
+	#cube div{
+		position:absolute;
+		left:0;
+		top:0;
+		width:50px;
+		height:50px;
+		
+	}
+	#cube div:nth-child(1){
+		top:-50px;
+		transform-origin:bottom;
+		transform:rotateX(90deg);
+	}
+	#cube div:nth-child(2){
+		top:50px;
+		transform-origin:top;
+		transform:rotateX(-90deg);
+	}
+	#cube div:nth-child(3){
+		left:-50px;
+		transform-origin:right;
+		transform:rotateY(-90deg);
+	}
+	#cube div:nth-child(4){
+		left:50px;
+		transform-origin:left;
+		transform:rotateY(90deg);
+	}
+	#cube div:nth-child(5){
+		
+	}
+	#cube div:nth-child(6){
+		transform:translateZ(-50px);	
+	}
+	#cube div img{
+		width:50px;
+		height:50px;
+	}
+  </style>
+ </head>
+ <body>
+	<div id="heart">
+		<div id="cube">
+			<div><img src="1.jpg"></div>
+			<div><img src="4.jpg"></div>
+			<div><img src="2.jpg"></div>
+			<div><img src="5.jpg"></div>
+			<div><img src="3.jpg"></div>
+			<div><img src="6.jpg"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+	  /*
+	  var pheart 自定义一个变量来存储
+	  在docment文档下by通过id名获取元素element
+	  */
+		var oHeart =document.getElementById("heart");
+		//生成循环的36个div添加到heart这个div里面去
+		for(var i=0;i<36 ;i++ )
+		{
+			var oDiv =document.createElement("div");
+			oDiv.className = "heart";
+			oDiv.style.transform="rotateY("+i*10+"deg)rotateZ(45deg)translateX(30px)";
+			oHeart.appendChild(oDiv);
+		}
+	</Script>
+	<h4><font color="green" face="楷体">小玲玲，祝你</font>
+	<br>
+	<font color="green" face="楷体">生日快乐，可</font>
+	<br>
+	<font color="green" face="楷体">能看着简单但</font>
+	<br>
+	<font color="green" face="楷体">都是一个个敲</font>
+	<br>
+	<font color="green" face="楷体">代码得出来的。</font></h4>
+	<font color="blue" face="楷体">还记得第一次见你的时候，感觉你那么的漂亮我居然能认识你好开心</font>
+	<font color="red" face="楷体">现在你工作了，我作为朋友希望你每天都开开心心的，你不开心的时候可以找我说说话</font>
+	<marquee scrollamount="20">
+	<img src="1.jpg" width="200px" height="360px" align="left">
+	<img src="2.jpg" width="200px" height="360px" align="left">
+	<img src="3.jpg" width="200px" height="360px" align="bottom">
+	<img src="4.jpg" width="200px" height="360px" align="left">
+	<img src="5.jpg" width="200px" height="360px" align="bottom">
+
+	</marquee>
+<embed height="100" width="100" src="mnk.mp3">
+ </body>
+</html>
