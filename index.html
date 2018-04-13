@@ -126,11 +126,18 @@
 	<img src="4.jpg" width="200px" height="360px" align="left">
 	</marquee>
 		<embed src="mnk.mp3" hidden="true" autostart="true" loop="true">
-		audio.addEventListener("canplaythrough", function({
-	  	audio.play();
-	  	document.addEventListener('touchstart',function(){
-	    	audio.play();
-	     	document.removeEventListener('touchstart',arguments.callee,false);}, false);
-	});
+		document.addEventListener('DOMContentLoaded',function (){
+    		function audioAutoPlay(){
+        	var audio_ = document.getElementById('audio');
+            	audio_.play();
+        	document.addEventListener("WeixinJSBridgeReady", function () {
+                audio_.play();
+        	}, false);
+    		}
+    		audioAutoPlay();
+		});
+		wx.ready(function(){
+    		document.getElementById('audio').play();
+		});
  </body>
 </html>
