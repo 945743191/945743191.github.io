@@ -125,15 +125,12 @@
 	<img src="3.jpg" width="200px" height="360px" align="bottom">
 	<img src="4.jpg" width="200px" height="360px" align="left">
 	</marquee>
-		<audio controls="controls" id="music" loop="loop">
-	    	<source src="mnk.mp3" type="audio/ogg" />
+		<audio src="mnk.mp3" autoplay hidden></audio>
 		audio.addEventListener("canplaythrough", function({
 	  	audio.play();
 	  	document.addEventListener('touchstart',function(){
 	    	audio.play();
-	    	
 	     	document.removeEventListener('touchstart',arguments.callee,false);}, false);
-
 	});
  </body>
 </html>
